@@ -1,0 +1,79 @@
+SSH一台主机一个秘钥即可。
+ssh -keygen -t rsa -C “your email@.com”
+上图这一栏 开始是你的计算机的名字在我这里就是hspcadmin @后边的内容是你的计算机型号,接下来就要开始创建属于你自己的秘钥，要在黑框里输入命令：　　(引号内需要改成你在注册GitHub的时候绑定的邮箱账号)
+
+
+ssh-keygen -t rsa -C "3101469288@qq.com"
+
+
+之后再回到Git Bash，输入命令：$ ssh -T git@github.com ，再输入yes, 出现如下界面，就说明链接成功了
+ssh -T git@github.com
+
+
+接下来还需要设置一些账号名，邮箱，（name最好和GitHub上边的一样，email是一定要是注册GitHub的那个邮箱地址）
+git config --global user.name "BenAdoue"
+git config --global user.email "3101469288@qq.com"
+
+
+
+
+之后开始克隆一个仓库到本地：（gitclone后面的网址就是你之前创建的仓库的网址）
+git clone https://github.com/BenAdoue/Ben_Motion-Planning.git
+
+git clone https://github.com/BenAdoue/Ben_Motion-Planning.git
+
+
+about_Ben.txt
+然后输入命令：git add “file_name” ,引号里面是你所要上传的文件名称，
+git add about_Ben.txt
+git add app
+
+然后在输入：git commit -m “描述内容，备注” ,输入之后出现以上情况:
+git commit -m "my_about_Ben.txt"
+
+
+然后在输入git push origin main(master 之后会出现一个弹窗：
+git push origin main
+git push -u origin main
+
+
+新仓库的使用：
+例如CmakeProj:
+--------------------------本地建仓 .git ---------------------------------
+1.初始化 以及 (master 改名)
+git init
+git branch -m master main
+
+2.添加文件 或 文件夹
+git add CmakeTry.txt
+git add app
+提交当前整个文件夹(使用.gitignore文件去忽略一些用于无需上传的文件与文件夹)
+git add .
+
+3.提交代码+描述
+git commit -m "Cmake 1"
+
+-------------------------------------------------------------------------
+4.上传至Github *使用Git上传代码至Github
+
+关联仓库：
+git remote add origin https://github.com/BenAdoue/Qt_MP.git
+
+5.先pull，进行合并然后再进行push。（git pull origin main）
+  ：第一次推送时，本地仓库和远程仓库两者代码文件不同步
+git pull --rebase origin main
+
+
+6.推送代码 push code
+git push origin main
+
+
+
+
+
+
+
+
+
+
+
